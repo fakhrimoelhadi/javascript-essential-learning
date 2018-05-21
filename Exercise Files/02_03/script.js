@@ -158,19 +158,59 @@
 // document.getElementById("box").innerHTML = html;
 
 // practice simple closure
-function giveMeEms (pixels){
-  var baseValue = 16;
+// function giveMeEms (pixels){
+//   var baseValue = 16;
+//
+//   function doTheMath(){
+//     return pixels/baseValue;
+//   }
+//
+//   return doTheMath;
+// }
+//
+// var smallSize = giveMeEms(12);
+// var mediumSize = giveMeEms(18);
+// var largeSize = giveMeEms(22);
+// var xLargeSize = giveMeEms(22);
+//
+// console.log("Small Size: " + smallSize() + "\n" + "Medium Size: " + mediumSize() + "\n" + "Large Size: " +  largeSize() + "\n" + "Extra Large Size: " +  xLargeSize());
 
-  function doTheMath(){
-    return pixels/baseValue;
+//Break loops
+// const MIN = 0;
+// const MAX = 36;
+// var testNumber = 15;
+// var i = 1;
+//
+// while(MAX){
+  // find random number Math.floor(Math.random())
+  // let randomValue = Math.floor(Math.random() * (MAX-MIN)) + MIN;
+
+  // break the while loop when random value equals to 15 or the test number
+//   if (randomValue == testNumber){
+//     break;
+//   }
+//
+//   console.log("Round " + i + ": " + randomValue); i++;
+// }
+// console.log("The script went " + i + " round before finding " + testNumber + ".");
+
+//Continue loops, finding prime number out of 100
+const CEILING = 50;
+
+function primeTest(testValue){
+  let isPrime = true;
+  for (let i = 2; i < testValue; i++){
+    if (testValue % i === 0){
+      isPrime = false;
+    }
   }
-
-  return doTheMath;
+  return isPrime;
 }
 
-var smallSize = giveMeEms(12);
-var mediumSize = giveMeEms(18);
-var largeSize = giveMeEms(22);
-var xLargeSize = giveMeEms(22);
-
-console.log("Small Size: " + smallSize() + "\n" + "Medium Size: " + mediumSize() + "\n" + "Large Size: " +  largeSize() + "\n" + "Extra Large Size: " +  xLargeSize());
+for (let i = 2; i < CEILING; i++){
+  let result = primeTest(i);
+  if ( result == false){
+    continue;
+  }
+  console.log(i + " is a prime number");
+}
